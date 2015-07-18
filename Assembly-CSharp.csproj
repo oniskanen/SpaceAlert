@@ -47,12 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AIHelper.cs" />
+     <Compile Include="Assets\AirUpgrade.cs" />
+     <Compile Include="Assets\BuildingUpgrade.cs" />
      <Compile Include="Assets\ClickableBox.cs" />
      <Compile Include="Assets\Damage.cs" />
      <Compile Include="Assets\Fighter.cs" />
      <Compile Include="Assets\HOTween\_Demo\HOTweenDemoBrain.cs" />
      <Compile Include="Assets\Lifetime.cs" />
+     <Compile Include="Assets\MeleeUpgrade.cs" />
      <Compile Include="Assets\ParticleSystemAutoDestroy.cs" />
+     <Compile Include="Assets\RangedUpgrade.cs" />
      <Compile Include="Assets\Steer2D\Examples\Assets\Target.cs" />
      <Compile Include="Assets\Steer2D\Scripts\Arrive.cs" />
      <Compile Include="Assets\Steer2D\Scripts\Evade.cs" />
