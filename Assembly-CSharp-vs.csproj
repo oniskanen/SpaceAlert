@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{E199741B-11D8-40FC-2626-7C179A608D78}</ProjectGuid>
+	<ProjectGuid>{BBDC0B73-C107-3CE4-AB63-18CE75C1D9CF}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,12 +47,17 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AIHelper.cs" />
+     <Compile Include="Assets\AirUpgrade.cs" />
      <Compile Include="Assets\CameraController.cs" />
+     <Compile Include="Assets\BuildingUpgrade.cs" />
+     <Compile Include="Assets\ClickableBox.cs" />
      <Compile Include="Assets\Damage.cs" />
      <Compile Include="Assets\Fighter.cs" />
      <Compile Include="Assets\HOTween\_Demo\HOTweenDemoBrain.cs" />
      <Compile Include="Assets\Lifetime.cs" />
+     <Compile Include="Assets\MeleeUpgrade.cs" />
      <Compile Include="Assets\ParticleSystemAutoDestroy.cs" />
+     <Compile Include="Assets\RangedUpgrade.cs" />
      <Compile Include="Assets\Steer2D\Examples\Assets\Target.cs" />
      <Compile Include="Assets\Steer2D\Scripts\Arrive.cs" />
      <Compile Include="Assets\Steer2D\Scripts\Evade.cs" />
@@ -67,17 +72,17 @@
      <Compile Include="Assets\Targeting.cs" />
      <Compile Include="Assets\Test.cs" />
      <None Include="Assets\HOTween\readme.txt" />
- <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="HOTween">
- <HintPath>/Users/oni/Space Alert/Assets/HOTween/Plugins/HOTween.dll</HintPath>
+ <HintPath>/Users/snowflake/Documents/code/unity/SpaceAlert/Assets/HOTween/Plugins/HOTween.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
