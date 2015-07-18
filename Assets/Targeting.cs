@@ -9,6 +9,9 @@ public class Targeting : MonoBehaviour {
 	public int enemyTeam = 2;
 	public Rigidbody2D laser;
 	public int life = 10;
+	public float pursuitFadeOffRange = 2;
+	public float pursuitWeight = 4;
+
 	// Use this for initialization
 	void Start () {
 		if (team == 1) {
@@ -43,9 +46,17 @@ public class Targeting : MonoBehaviour {
 
 
 		GameObject target = GetClosest (enemies);
+
+		Pursue pursueBehaviour = transform.GetComponent<Pursue> ();
+		float distanceToTarget = (target.transform.position - transform.position).magnitude;
+		if (distanceToTarget > pursuitFadeOffRange)
+			pursueBehaviour.Weight = pursuitWeight / (1 + pursuitFadeOffRange - distanceToTarget);
+		else
+			pursueBehaviour.Weight = pursuitWeight;
+
 		gizmoLocation = target.transform.position;
 
-		transform.GetComponent<Pursue> ().TargetAgent = target.GetComponent<SteeringAgent> ();
+		pursueBehaviour.TargetAgent = target.GetComponent<SteeringAgent> ();
 		// Shoot ();
 	}
 
