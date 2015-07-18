@@ -1,9 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AIHelper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Damage.cs">
     <Files>
-      <File FileName="Assets/AIHelper.cs" Line="18" Column="5" />
-      <File FileName="Assets/Targeting.cs" Line="1" Column="1" />
+      <File FileName="Assets/AIHelper.cs" Line="26" Column="1" />
+      <File FileName="Assets/Targeting.cs" Line="5" Column="19" />
+      <File FileName="Assets/Steer2D/Scripts/Pursue.cs" Line="1" Column="1" />
+      <File FileName="Assets/Steer2D/Scripts/Flock.cs" Line="1" Column="1" />
+      <File FileName="Assets/Lifetime.cs" Line="16" Column="19" />
+      <File FileName="Assets/Damage.cs" Line="24" Column="66" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
