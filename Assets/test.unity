@@ -378,6 +378,7 @@ GameObject:
   - 92: {fileID: 278918614}
   - 124: {fileID: 278918613}
   - 81: {fileID: 278918612}
+  - 114: {fileID: 278918617}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -451,6 +452,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &278918617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 278918611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeaedd30211dc49eca10cf03354e2704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1001 &289445871
 Prefab:
   m_ObjectHideFlags: 0
@@ -537,6 +550,89 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
+--- !u!1 &371961433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 136114, guid: 140bc5b2a62e547d9b3e133d38b09b80, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 371961437}
+  - 212: {fileID: 371961436}
+  - 61: {fileID: 371961435}
+  - 114: {fileID: 371961434}
+  m_Layer: 0
+  m_Name: GreenBuy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &371961434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11482470, guid: 140bc5b2a62e547d9b3e133d38b09b80,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 371961433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6752eef158d6345188e0dbebde9f9728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &371961435
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6103518, guid: 140bc5b2a62e547d9b3e133d38b09b80,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 371961433}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 6.4000001, y: 4}
+--- !u!212 &371961436
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21212534, guid: 140bc5b2a62e547d9b3e133d38b09b80,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 371961433}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 27e7c7f62df644bedac1497838d60e86, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &371961437
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 412878, guid: 140bc5b2a62e547d9b3e133d38b09b80, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 371961433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -35.0600014, y: 4.01999998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1001 &403921966
 Prefab:
   m_ObjectHideFlags: 0
@@ -673,6 +769,8 @@ MonoBehaviour:
   enemyTeam: 1
   laser: {fileID: 0}
   life: 10
+  pursuitFadeOffRange: 2
+  pursuitWeight: 4
 --- !u!114 &429347373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,6 +951,8 @@ MonoBehaviour:
   enemyTeam: 1
   laser: {fileID: 0}
   life: 10
+  pursuitFadeOffRange: 2
+  pursuitWeight: 4
 --- !u!114 &499600468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,7 +1086,7 @@ MonoBehaviour:
 --- !u!1 &592712744
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114740, guid: b6834a1d4c479429bac1ed279dab406c, type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
@@ -995,7 +1095,7 @@ GameObject:
   - 61: {fileID: 592712746}
   - 114: {fileID: 592712745}
   m_Layer: 0
-  m_Name: ClickableBox
+  m_Name: GreenUpgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1004,18 +1104,26 @@ GameObject:
 --- !u!114 &592712745
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11493042, guid: b6834a1d4c479429bac1ed279dab406c,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 592712744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c79b1c2313b5400ab70a4103bd121fb, type: 3}
+  m_Script: {fileID: 11500000, guid: c65c4bb44cde44fe887e51600f9491ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 685d781734ff64fc48658521360121e0, type: 3}
+  - {fileID: 21300000, guid: f0f18c3c9475b4db4a7bf4e474f8cb65, type: 3}
+  - {fileID: 21300000, guid: c9274324908b54b75b5179a020f0eedc, type: 3}
+  - {fileID: 21300000, guid: f463fd3a9b8df43e29ef60dabe3898ec, type: 3}
+  - {fileID: 21300000, guid: 8d809923a3103420fb72e9ea4fdf1cd9, type: 3}
 --- !u!61 &592712746
 BoxCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 6129672, guid: b6834a1d4c479429bac1ed279dab406c,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 592712744}
   m_Enabled: 1
@@ -1028,7 +1136,8 @@ BoxCollider2D:
 --- !u!212 &592712747
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 21219976, guid: b6834a1d4c479429bac1ed279dab406c,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 592712744}
   m_Enabled: 1
@@ -1049,16 +1158,16 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3be1e93222fe42e3a917cfdc48493cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 685d781734ff64fc48658521360121e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &592712748
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 478350, guid: b6834a1d4c479429bac1ed279dab406c, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 592712744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .25, y: 6.19999981, z: 0}
+  m_LocalPosition: {x: -43.2200012, y: 3.99000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1200,6 +1309,8 @@ MonoBehaviour:
   enemyTeam: 2
   laser: {fileID: 0}
   life: 10
+  pursuitFadeOffRange: 2
+  pursuitWeight: 4
 --- !u!114 &724202644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,6 +1443,86 @@ MonoBehaviour:
   SlowRadius: 1
   StopRadius: .200000003
   DrawGizmos: 0
+--- !u!1 &742728903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 742728907}
+  - 212: {fileID: 742728906}
+  - 61: {fileID: 742728905}
+  - 114: {fileID: 742728904}
+  m_Layer: 0
+  m_Name: GreenSendTroops
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &742728904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742728903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3e5e62ef4b543b7b37e821a18d1bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &742728905
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742728903}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 6.4000001, y: 4}
+--- !u!212 &742728906
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742728903}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 34f2d517c89cd424d8ad52846b18f924, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &742728907
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742728903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.8299999, y: 3.94000006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &745556542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,6 +1573,8 @@ MonoBehaviour:
   enemyTeam: 1
   laser: {fileID: 0}
   life: 10
+  pursuitFadeOffRange: 2
+  pursuitWeight: 4
 --- !u!114 &745556545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1562,6 +1755,8 @@ MonoBehaviour:
   enemyTeam: 2
   laser: {fileID: 0}
   life: 10
+  pursuitFadeOffRange: 2
+  pursuitWeight: 4
 --- !u!114 &1124498715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1882,6 +2077,8 @@ MonoBehaviour:
   enemyTeam: 2
   laser: {fileID: 0}
   life: 10
+  pursuitFadeOffRange: 2
+  pursuitWeight: 4
 --- !u!114 &1317764636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2148,6 +2345,8 @@ MonoBehaviour:
   enemyTeam: 2
   laser: {fileID: 0}
   life: 10
+  pursuitFadeOffRange: 2
+  pursuitWeight: 4
 --- !u!114 &1458337736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2382,6 +2581,8 @@ MonoBehaviour:
   enemyTeam: 1
   laser: {fileID: 0}
   life: 10
+  pursuitFadeOffRange: 2
+  pursuitWeight: 4
 --- !u!114 &1770586816
 MonoBehaviour:
   m_ObjectHideFlags: 0
