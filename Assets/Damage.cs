@@ -20,8 +20,8 @@ public class Damage : MonoBehaviour {
 		Targeting t = other.GetComponent<Targeting> ();
 		if (t != null && t.team != this.team) {
 			other.SendMessage ("ApplyDamage", 1f);
-			Destroy(this.gameObject);
 			Instantiate(explosion, transform.position, Quaternion.identity);
 		}
+		Destroy(this.gameObject);
 	}
 }

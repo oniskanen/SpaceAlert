@@ -73,6 +73,15 @@ public class Targeting : MonoBehaviour {
 		// Shoot ();
 	}
 
+	public void SetMoveTarget(GameObject planet)
+	{
+		PatrolRing patrol = GetComponent<PatrolRing> ();
+		patrol.TargetPoint = planet.transform.position;
+		patrol.CollisionRadius = planet.GetComponent<CircleCollider2D> ().radius;
+		patrol.InnerRadius = patrol.CollisionRadius + 0.2f;
+		patrol.OuterRadius = patrol.InnerRadius + 0.5f;
+	}
+
 	void FixedUpdate()
 	{
 		if (framesToNextShot > 0)

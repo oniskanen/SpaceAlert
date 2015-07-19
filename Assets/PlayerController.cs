@@ -41,4 +41,12 @@ public class PlayerController : MonoBehaviour {
 		f.GetComponent<Targeting> ().enemyTeam = this.enemyTeam;
 		f.transform.parent = transform;
 	}
+
+	public void SetFighterTarget(GameObject planet)
+	{
+		Targeting[] ais = transform.GetComponentsInChildren<Targeting> ();
+		foreach (Targeting t in ais) {
+			t.SetMoveTarget(planet);
+		}
+	}
 }
