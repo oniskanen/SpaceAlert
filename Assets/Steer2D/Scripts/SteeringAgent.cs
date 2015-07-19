@@ -39,7 +39,9 @@ namespace Steer2D
             foreach (SteeringBehaviour behaviour in behaviours)
             {
                 if (behaviour.enabled)
+				{
                     acceleration += behaviour.GetVelocity() * behaviour.Weight;
+				}
             }
 
             CurrentVelocity += acceleration / Mass;

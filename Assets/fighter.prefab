@@ -36,6 +36,7 @@ GameObject:
   - 61: {fileID: 6180998}
   - 58: {fileID: 5883186}
   - 114: {fileID: 11495274}
+  - 114: {fileID: 11424536}
   m_Layer: 0
   m_Name: fighter
   m_TagString: Untagged
@@ -103,7 +104,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149702}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
@@ -136,6 +137,23 @@ MonoBehaviour:
   NextCoordRadius: .200000003
   Loop: 1
   DrawGizmos: 0
+--- !u!114 &11424536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9430947fad32841e48eaa10d3b3dfe16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Weight: 1
+  TargetPoint: {x: 0, y: 0}
+  OuterRadius: 3
+  InnerRadius: 2
+  CollisionRadius: 1.79999995
+  DrawGizmos: 1
 --- !u!114 &11435938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,6 +186,9 @@ MonoBehaviour:
   enemyTeam: 2
   laser: {fileID: 0}
   life: 10
+  pursuitFadeOffRange: 2
+  pursuitWeight: 4
+  shotInterval: 10
 --- !u!114 &11474004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,7 +236,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149702}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb57b486d7fa47f45a741d888bb39b72, type: 3}
   m_Name: 
@@ -1346,7 +1367,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DrawGizmos
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 149702}

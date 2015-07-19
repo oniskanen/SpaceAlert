@@ -13,6 +13,6 @@ public class Lifetime : MonoBehaviour {
 	void FixedUpdate () {
 		updatesLeft--;
 		if (updatesLeft < 0)
-			Destroy (this);
+			Destroy (this.gameObject);
 	}
 }

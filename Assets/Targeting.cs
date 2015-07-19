@@ -12,6 +12,8 @@ public class Targeting : MonoBehaviour {
 	public float pursuitFadeOffRange = 2;
 	public float pursuitWeight = 4;
 
+	private int framesToNextShot = 0;
+	public int shotInterval = 10;
 	// Use this for initialization
 	void Start () {
 		if (team == 1) {
@@ -50,7 +52,7 @@ public class Targeting : MonoBehaviour {
 		Pursue pursueBehaviour = transform.GetComponent<Pursue> ();
 		float distanceToTarget = (target.transform.position - transform.position).magnitude;
 		if (distanceToTarget > pursuitFadeOffRange)
-			pursueBehaviour.Weight = pursuitWeight / (1 + pursuitFadeOffRange - distanceToTarget);
+			pursueBehaviour.Weight = pursuitWeight * (pursuitFadeOffRange/(distanceToTarget*distanceToTarget));
 		else
 			pursueBehaviour.Weight = pursuitWeight;
 
@@ -58,6 +60,12 @@ public class Targeting : MonoBehaviour {
 
 		pursueBehaviour.TargetAgent = target.GetComponent<SteeringAgent> ();
 		// Shoot ();
+	}
+
+	void FixedUpdate()
+	{
+		if (framesToNextShot > 0)
+			framesToNextShot--;
 	}
 
 	void OnDrawGizmos()
@@ -71,13 +79,17 @@ public class Targeting : MonoBehaviour {
 
 	private void Shoot ()
 	{
+		if (framesToNextShot == 0)
+			framesToNextShot = shotInterval;
+		else
+			return;
+
 		Rigidbody2D l = (Rigidbody2D)Instantiate (laser, transform.position +(transform.right * 0.1f), transform.rotation);
 		l.velocity = 10 * transform.right;
 		l.GetComponent<Damage> ().team = this.team;
-		Debug.Log ("Shot with v = " + l.velocity);
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerStay2D(Collider2D other)
 	{
 		Targeting t = other.transform.GetComponent<Targeting> ();
 		if (t != null && t.team == this.enemyTeam) {

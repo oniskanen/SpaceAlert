@@ -1,19 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Targeting.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Steer2D/Scripts/Arrive.cs">
     <Files>
-      <File FileName="Assets/AIHelper.cs" Line="26" Column="1" />
-      <File FileName="Assets/Targeting.cs" Line="53" Column="45" />
+      <File FileName="Assets/Steer2D/Scripts/Arrive.cs" Line="1" Column="1" />
+      <File FileName="Assets/AIHelper.cs" Line="1" Column="1" />
+      <File FileName="Assets/Targeting.cs" Line="1" Column="1" />
       <File FileName="Assets/Steer2D/Scripts/Pursue.cs" Line="1" Column="1" />
       <File FileName="Assets/Steer2D/Scripts/Flock.cs" Line="1" Column="1" />
       <File FileName="Assets/Lifetime.cs" Line="1" Column="1" />
-      <File FileName="Assets/Damage.cs" Line="24" Column="66" />
-      <File FileName="Assets/ParticleSystemAutoDestroy.cs" Line="24" Column="2" />
+      <File FileName="Assets/Damage.cs" Line="1" Column="1" />
+      <File FileName="Assets/ParticleSystemAutoDestroy.cs" Line="1" Column="1" />
+      <File FileName="Assets/CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Steer2D/Scripts/SteeringAgent.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/oni/Space Alert/Assets/Fighter.cs" line="19" />
+      <Breakpoint file="/Users/oni/Space Alert/Assets/CameraController.cs" line="23" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
