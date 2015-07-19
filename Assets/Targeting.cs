@@ -14,6 +14,9 @@ public class Targeting : MonoBehaviour {
 
 	private int framesToNextShot = 0;
 	public int shotInterval = 10;
+	public bool DrawGizmos = true;
+	private bool hasTarget = false;
+
 	// Use this for initialization
 	void Start () {
 		if (team == 1) {
@@ -44,8 +47,10 @@ public class Targeting : MonoBehaviour {
 		AIHelper helper = GameObject.Find ("AIHelper").GetComponent<AIHelper>();
 		IList<GameObject> enemies = helper.GetShips (enemyTeam);
 		if (!enemies.Any ())
+		{
+			hasTarget = false;
 			return;
-
+		}
 
 		GameObject target = GetClosest (enemies);
 
@@ -56,7 +61,13 @@ public class Targeting : MonoBehaviour {
 		else
 			pursueBehaviour.Weight = pursuitWeight;
 
-		gizmoLocation = target.transform.position;
+		if (pursuitWeight > 0.1) 
+		{
+			hasTarget = true;
+			gizmoLocation = target.transform.position;
+		} 
+		else
+			hasTarget = false;
 
 		pursueBehaviour.TargetAgent = target.GetComponent<SteeringAgent> ();
 		// Shoot ();
@@ -70,7 +81,7 @@ public class Targeting : MonoBehaviour {
 
 	void OnDrawGizmos()
 	{
-		if (true)
+		if (DrawGizmos && hasTarget)
 		{
 			Gizmos.color = this.team == 1 ? Color.red : Color.green;
 			Gizmos.DrawWireSphere(gizmoLocation, 0.1f);
